@@ -1,0 +1,6 @@
+Необходимые библиотеки:
+
+pygame
+ursina
+os
+random
