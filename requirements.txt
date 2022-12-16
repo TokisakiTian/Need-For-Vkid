@@ -4,3 +4,5 @@ pygame
 ursina
 os
 random
+
+Запускать игру через файл title.py
