@@ -43,34 +43,32 @@ class Menu:
                 draw.rect(surf, (0, 100, 0), option_rect)
             surf.blit(option, option_rect)
 
-menu = Menu()
-menu.append_option('Need For Vkid', lambda: print(''))
-menu.append_option('Начать игру', rea)
-menu.append_option('Выход из игры', quit)
+if __name__ == '__main__':
+    menu = Menu()
+    menu.append_option('Need For Vkid', lambda: print(''))
+    menu.append_option('Начать игру', rea)
+    menu.append_option('Выход из игры', quit)
+    running = True
+    while running:
+        if a:
+            startgame()
+            quit()
+        for e in event.get():
+            if e.type == QUIT:
+                running = False
+            elif e.type == KEYDOWN:
+                if e.key == K_w:
+                    menu.switch(-1)
+                elif e.key == K_s:
+                    menu.switch(1)
+                elif e.key == K_SPACE:
+                    menu.select()
 
+        screen.fill((0, 0, 0))
 
-running = True
-while running:
-    if a:
-        startgame()
-        quit()
-    for e in event.get():
-        if e.type == QUIT:
-            running = False
-        elif e.type == KEYDOWN:
-            if e.key == K_w:
-                menu.switch(-1)
-            elif e.key == K_s:
-                menu.switch(1)
-            elif e.key == K_SPACE:
-                menu.select()
+        menu.draw(screen, 100, 100, 75)
 
-    screen.fill((0, 0, 0))
-
-    menu.draw(screen, 100, 100, 75)
-
-    display.flip()
-quit()
+        display.flip()
 
 
 
